@@ -43,5 +43,7 @@ public class Bank {
 				System.out.println("Sei uscito");
 			}
 		}while(userChoise!=3);
+		
+		in.close();
 	}
 }
