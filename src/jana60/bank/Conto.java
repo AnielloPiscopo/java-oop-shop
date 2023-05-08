@@ -35,7 +35,11 @@ public class Conto {
 	}
 	
 	public void decreaseBalance(double withdraw) {
-		if(withdraw>0) this.balance -= withdraw ;
+		if(this.balance>0 && this.balance>=withdraw) this.balance -= withdraw ;
 		else return;
+	}
+	
+	public String toString() {
+		return "Infomazione del conto :\n Codice Conto = " + getNumber() + "\n Nome del proprietario = " + getOwnerName() + "\n Bilancio attuale = " + getBalance();
 	}
 }
