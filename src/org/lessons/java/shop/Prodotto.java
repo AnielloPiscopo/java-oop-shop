@@ -87,6 +87,11 @@ public class Prodotto {
 		this.vat = vat;
 	}
 
-//	public String toString() {
-//		return "[" + getId() + "]" + 
-//	};
+	public String toString() {
+		
+		return "[" + getId() + "]\n" 
+				+ getName() + " - \"" + getCompleteName() + "\"" 
+			+ "\n" + getDescription() 
+			+ "\n" + String.format("%.2f", getPrice()) + "$ (" + getVat() + "%)"
+				+ " --> " + String.format("%.2f", getPriceWithVat()) + "$";
+	}

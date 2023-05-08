@@ -40,6 +40,6 @@ public class Conto {
 	}
 	
 	public String toString() {
-		return "Infomazione del conto :\n Codice Conto = " + getNumber() + "\n Nome del proprietario = " + getOwnerName() + "\n Bilancio attuale = " + getBalance();
+		return "Infomazione del conto :\n Codice Conto = " + getNumber() + "\n Nome del proprietario = " + getOwnerName() + "\n Bilancio attuale = " + String.format("%.2f", getBalance() + "$");
 	}
 }
