@@ -9,6 +9,8 @@ public class Prodotto {
 	private double price;
 	private int vat;
 	
+	
+	
 	public Prodotto(String name , String description , double price , int vat) {
 		setId();
 		setName(name);
@@ -16,6 +18,8 @@ public class Prodotto {
 		setPrice(price);
 		setVat(vat);
 	}
+	
+	
 	
 	public String getId() {
 		return this.id;
@@ -38,7 +42,7 @@ public class Prodotto {
 	}
 	
 	public double getPriceWithVat() {
-		double priceWithVat = price * vat / 100;
+		double priceWithVat = getPrice() *(1 + getVat() / 100d);
 		return priceWithVat;
 	}
 	
@@ -52,17 +56,17 @@ public class Prodotto {
 		int maxIdDigits = 8;
 		Random rnd = new Random();
 		Integer rndNumber;
+		int idLng = this.id.length();
 		do {
 			rndNumber = rnd.nextInt();
 			this.id = rndNumber + "";
-			int idLng = this.id.length();
 			if(idLng<maxIdDigits) {
 				int numOfZeros = maxIdDigits-idLng;
 				for(int i=0 ; i<numOfZeros ; i++) {
 					this.id = "0" + this.id;
 				}
 			}
-		}while(rndNumber<=0 || this.id.length()>maxIdDigits);
+		}while(rndNumber<=0 || idLng>maxIdDigits);
 	}
 	
 	public void setName(String name) {
@@ -82,4 +86,7 @@ public class Prodotto {
 	public void setVat(Integer vat) {
 		this.vat = vat;
 	}
-}
+
+//	public String toString() {
+//		return "[" + getId() + "]" + 
+//	};
