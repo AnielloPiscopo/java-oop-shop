@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Bank {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		
+		
 		int min = 1;
 		int max = 1000;
 		Random rnd = new Random();
@@ -30,18 +32,22 @@ public class Bank {
 			userChoise = in.nextInt();
 			
 			switch(userChoise) {
-			case 1:
-				System.out.print("Quanto vuoi versare? ");
-				double payment = in.nextDouble();
-				bankAccount.increaseBalance(payment);
-				break;
-			case 2:
-				System.out.print("Quanto vuoi prelevare? ");
-				double withdraw = in.nextDouble();
-				bankAccount.decreaseBalance(withdraw);
-				break;
-			case 3:
-				System.out.println("Sei uscito");
+				case 1:
+					System.out.print("Quanto vuoi versare? ");
+					double payment = in.nextDouble();
+					bankAccount.increaseBalance(payment);
+					break;
+				case 2:
+					System.out.print("Quanto vuoi prelevare? ");
+					double withdraw = in.nextDouble();
+					bankAccount.decreaseBalance(withdraw);
+					break;
+				case 3:
+					System.out.println("Sei uscito");
+					break;
+				default:
+					System.out.println("Valore non valido");
+					break;
 			}
 		}while(userChoise!=3);
 		
