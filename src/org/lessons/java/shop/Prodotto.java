@@ -95,3 +95,5 @@ public class Prodotto {
 			+ "\n" + String.format("%.2f", getPrice()) + "$ (" + getVat() + "%)"
 				+ " --> " + String.format("%.2f", getPriceWithVat()) + "$";
 	}
+	
+}

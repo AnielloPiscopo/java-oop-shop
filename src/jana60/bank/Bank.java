@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 public class Bank {
 	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
 		int min = 1;
 		int max = 1000;
-		System.out.print("Inserisci il tuo nome");
-		Scanner in = new Scanner(System.in);
-		
 		Random rnd = new Random();
-		
 		int bankAccountNumber = rnd.nextInt(min , max);
 		
+		
+		System.out.print("Inserisci il tuo nome");
 		String name = in.nextLine().trim();
+		
+		
 		Conto bankAccount = new Conto(bankAccountNumber , name);
 		int userChoise = 0;
 		
@@ -47,3 +48,5 @@ public class Bank {
 		in.close();
 	}
 }
+
+	
