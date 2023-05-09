@@ -1,24 +1,16 @@
 package jana60.bank;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Bank {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		
-		int min = 1;
-		int max = 1000;
-		Random rnd = new Random();
-		int bankAccountNumber = rnd.nextInt(min , max);
-		
-		
 		System.out.print("Inserisci il tuo nome");
 		String name = in.nextLine().trim();
 		
 		
-		Conto bankAccount = new Conto(bankAccountNumber , name);
+		Conto bankAccount = new Conto(name);
 		int userChoise = 0;
 		
 		do {
